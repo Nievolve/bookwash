@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html style="background-color:black"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+
+    <!--TODO: Dessa borde verifieras-->
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <link href="http://178.16.220.6/AptusPortal/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://178.16.220.6/AptusPortal/apple-touch-icon.png" rel="apple-touch-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Översikt - Aptusportal</title>
+    <link href="%C3%96versikt%20-%20Aptusporta01l_files/css.css" rel="stylesheet">
+
+    <link href="%C3%96versikt%20-%20Aptusporta01l_files/jQueryAlertCss.css" rel="stylesheet">
+
+    <script src="%C3%96versikt%20-%20Aptusporta01l_files/jquery"></script>
+
+    <script src="%C3%96versikt%20-%20Aptusporta01l_files/jQueryAlertScripts"></script>
+
+    <link href="%C3%96versikt%20-%20Aptusporta01l_files/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+
+    
+    <link href="%C3%96versikt%20-%20Aptusporta01l_files/Booking.css" rel="stylesheet">
+
+
+</head>
+<body style="position: relative; overflow-x: hidden;" data-root="http://178.16.220.6/AptusPortal/">
+        <nav role="navigation" class="main-menu mainMenuBackgroundColor" style="height:100%;">
+            <div style="height:7rem; text-align:center" class="mainMenuBackgroundColor"><img src="%C3%96versikt%20-%20Aptusporta01l_files/logo.png" alt=" " style="width:33%; padding-top:2rem"></div>
+            
+<a aria-label="Hem" class="navigationElement navigationElementHover" href="javascript:void(0);" onclick="document.execCommand('Stop'); document.location.href='/AptusPortal/'" style="width:100%"><table class="mainMenuBackgroundColor" style="width:100%"><tbody><tr><td style="width:1px"><img alt="" class="navigationElementImg" src="%C3%96versikt%20-%20Aptusporta01l_files/hem.png" title="Hem"></td><td>Hem</td><td style="text-align:right; width:28px"></td></tr></tbody></table></a><a aria-label="Boka" class="navigationElement navigationElementHover" data-current="true" href="javascript:void(0);" onclick="document.execCommand('Stop'); document.location.href='/AptusPortal/CustomerBooking'" style="width:100%"><table class="mainMenuBackgroundColor" style="width:100%"><tbody><tr><td style="width:1px"><img alt="" class="navigationElementImg" src="%C3%96versikt%20-%20Aptusporta01l_files/boka_.png" title="Boka"></td><td>Boka</td><td style="text-align:right; width:28px"></td></tr></tbody></table></a><a aria-label="Inställningar" class="navigationElement navigationElementHover" href="javascript:void(0);" onclick="document.execCommand('Stop'); document.location.href='/AptusPortal/CustomerSettings'" style="width:100%"><table class="mainMenuBackgroundColor" style="width:100%"><tbody><tr><td style="width:1px"><img alt="" class="navigationElementImg" src="%C3%96versikt%20-%20Aptusporta01l_files/installningar.png" title="Inställningar"></td><td>Inställningar</td><td style="text-align:right; width:28px"></td></tr></tbody></table></a><a aria-label="Logga ut" class="navigationElement navigationElementHover" href="javascript:void(0);" onclick="document.execCommand('Stop'); document.location.href='/AptusPortal/Account/LogOff'" style="width:100%"><table class="mainMenuBackgroundColor" style="width:100%"><tbody><tr><td style="width:1px"><img alt="" class="navigationElementImg" src="%C3%96versikt%20-%20Aptusporta01l_files/logga_ut.png" title="Logga ut"></td><td>Logga ut</td><td style="text-align:right; width:28px"></td></tr></tbody></table></a>
+        </nav>
+    <div class="main-content" style="position:relative;">
+        <header class="header" style="position:relative;">
+            <div style="position:relative; z-index:1; max-width:90%;">
+                <h1 id="lblCurrentLocation" class="pageHeader">Boka — Tvätt — </h1>
+                <div style="display:inline-block; white-space:normal">
+    <a id="changeGroup" href="javascript:void(0);" onclick="LoadLocationGroupDialog(1)" aria-label="Du har valt bokningsplats Dukvägen 20 Handduken. Byt bokningsplats?">
+        DUKVÄGEN 20 : Handduken&nbsp;<span style="font-size:.7em; font-family:Arial; line-height:2em; vertical-align:top; z-index:-1">v</span>
+    </a>
+</div>
+            </div>
+            <div id="headNavigationRight" style="position:absolute; right:0; top:0; margin:1.2rem; z-index:2;/*display:none*/">
+                
+    
+    <button type="button" style="padding:0; background-color:transparent" aria-label="Ändra Månad" onclick="LoadOffsetMonthDialog()">
+        <img src="%C3%96versikt%20-%20Aptusporta01l_files/calendar.png" alt=" ">
+    </button>
+
+            </div>
+        <div id="weekDays" style="visibility: visible;">
+        <div style="display:table-row">
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    <div aria-hidden="true" class="weekDay" style="width: 154px; min-width: 5rem; max-width: 5rem; text-align: center;">Vecka</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Måndag</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Tisdag</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Onsdag</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Torsdag</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Fredag</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Lördag</div><div aria-hidden="true" class="weekDay" style="width: 154px;">Söndag</div></div></header>
+        <section class="bodySection" tabindex="-1" style="max-height: calc(-14.2rem + 100vh);">
+            
+
+
+
+
+
+
+
+<div id="content" style="background-color: white;">
+    
+<div class="weekWrapperDiv" role="button" tabindex="0" title="Välj vecka 29" data-new-location="/AptusPortal/CustomerBooking/BookingCalendar?bookingGroupId=1&amp;passDate=2024-07-15" aria-label="Välj Vecka 29, Från 2024-07-15 Till 2024-07-21">
+            <div class="weekNumber">
+                29
+                <br><br>
+            </div>
+
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+15<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+16<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+17<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+18<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+19<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+20<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+21<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+        </div>
+        <div style="line-height:.4rem; background-color:#fff">&nbsp;</div>
+<div class="weekWrapperDiv" role="button" tabindex="0" title="Välj vecka 30" data-new-location="/AptusPortal/CustomerBooking/BookingCalendar?bookingGroupId=1&amp;passDate=2024-07-22" aria-label="Välj Vecka 30, Från 2024-07-22 Till 2024-07-28">
+            <div class="weekNumber">
+                30
+                <br><br>
+            </div>
+
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+22<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+23<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock notBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+24<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+25<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+26<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+27<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+28<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+        </div>
+        <div style="line-height:.4rem; background-color:#fff">&nbsp;</div>
+<div class="weekWrapperDiv" role="button" tabindex="0" title="Välj vecka 31" data-new-location="/AptusPortal/CustomerBooking/BookingCalendar?bookingGroupId=1&amp;passDate=2024-07-29" aria-label="Välj Vecka 31, Från 2024-07-29 Till 2024-08-04">
+            <div class="weekNumber">
+                31
+                <br><br>
+            </div>
+
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+29<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+30<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+31<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    JUL
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                        <div style="border-left:1px solid #d5d5d5; float:left; width:1px; margin-top:1rem; display:inline-block; min-height:70%"></div>
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+1<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+2<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+3<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+4<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+        </div>
+        <div style="line-height:.4rem; background-color:#fff">&nbsp;</div>
+<div class="weekWrapperDiv" role="button" tabindex="0" title="Välj vecka 32" data-new-location="/AptusPortal/CustomerBooking/BookingCalendar?bookingGroupId=1&amp;passDate=2024-08-05" aria-label="Välj Vecka 32, Från 2024-08-05 Till 2024-08-11">
+            <div class="weekNumber">
+                32
+                <br><br>
+            </div>
+
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+5<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+6<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+7<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+8<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+9<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+10<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+11<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+        </div>
+        <div style="line-height:.4rem; background-color:#fff">&nbsp;</div>
+<div class="weekWrapperDiv" role="button" tabindex="0" title="Välj vecka 33" data-new-location="/AptusPortal/CustomerBooking/BookingCalendar?bookingGroupId=1&amp;passDate=2024-08-12" aria-label="Välj Vecka 33, Från 2024-08-12 Till 2024-08-18">
+            <div class="weekNumber">
+                33
+                <br><br>
+            </div>
+
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+12<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+13<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+14<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+15<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+16<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+17<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+<div class="dayWrapperDiv">
+                    <div class="sectionsWrapper">
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                                        <div class="dayBlock freeBookable"></div>
+                    </div><br>
+                    <div style="line-height:normal; display:inline-block; min-width:3rem">
+18<br>
+                                <div style="color:gray; font-size:.7rem; line-height:.5rem">
+                                    AUG
+                                </div><br>
+                    </div>
+                </div>
+        </div>
+        <div style="line-height:.4rem; background-color:#fff">&nbsp;</div>
+
+    <div id="dialog-locationsGroups" title="Partial dialog"></div>
+    <div id="dialog-offsetMonth" title="Partial dialog"></div>
+
+
+</div>
+
+            <br>
+        </section>
+        <footer class="footer" style="position: fixed; bottom: 0px; width: 1161px; text-align: center;">
+            
+        <table style="width:100%">
+            <tbody><tr>
+                <td style="text-align:left">
+                    <a aria-label="Föregående vecka" class="focusable" href="http://178.16.220.6/AptusPortal/CustomerBooking/BookingCalendarOverview?bookingGroupId=1&amp;overviewOffsetMonday=2024-06-10" title="Föregående vecka"><img alt=" " src="%C3%96versikt%20-%20Aptusporta01l_files/bakat_vit.png"></a>
+                </td>
+                <td style="width:1px;"><a class="focusable" href="http://178.16.220.6/AptusPortal/CustomerBooking/BookingCalendarOverview?bookingGroupId=1" title="NU"><img alt=" " src="%C3%96versikt%20-%20Aptusporta01l_files/now.png"></a></td>
+                <td style="text-align:right">
+                    <a aria-label="Nästa vecka" class="focusable" href="http://178.16.220.6/AptusPortal/CustomerBooking/BookingCalendarOverview?bookingGroupId=1&amp;overviewOffsetMonday=2024-08-19" title="Nästa vecka"><img alt=" " src="%C3%96versikt%20-%20Aptusporta01l_files/framat_vit.png"></a>
+                </td>
+            </tr>
+        </tbody></table>
+    
+        </footer>
+        <a id="lastFocus" href="javascript:void(0);" style="line-height:none" aria-label=" "></a>
+    </div>
+
+    <script>
+        TAB_KEY_CODE = 9;
+        docScrollHandeled = false;
+
+        $(window).load(function () {
+            // Tab logic
+            $("#popup_container").focus();
+
+            $(".focusable").on("mousedown", function () {
+                $(this).addClass("unfocus");
+            });
+
+            $(document).on("mousedown", "button", function () {
+                $(this).addClass("unfocus");
+            });
+
+            $("input[type='checkbox']").on("mousedown", function () {
+                $(this).addClass("unfocus");
+            });
+
+            $(document).on("keydown", function (e) {
+                if (e.keyCode === TAB_KEY_CODE)
+                    $("*").removeClass("unfocus");
+            });
+
+            //$(".focusable").on("blur", function () {
+            //    $(this).removeClass("unfocus");
+            //});
+
+            //$(".navigationElement").first().focus();
+
+            $("#lastFocus").on('focus', function (e) {
+                $(".navigationElement").first().focus();
+            });
+
+            $(".navigationElement").first().on('keydown', function (e) {
+                if ($("this:focus") && (e.keyCode === TAB_KEY_CODE)) {
+                    if (e.shiftKey) {
+                        e.preventDefault();
+                        $(":focusable").last().focus();
+                        //$(this).focus();
+                    }
+                }
+            });
+
+            /////////////////////////////////////////////////////////////
+
+            setTimeout(function () {
+                SetFooterSize();
+                if ($(".footer").height() != 0) {
+                    if ($(".bodySection").css("top") != "auto")
+                        $(".bodySection").css({ "max-height": "calc(100vh - (11.2rem)" });
+                    else
+                        $(".bodySection").css({ "max-height": "calc(100vh - (11.2rem + 3rem)" });
+                }
+            }, 100);
+
+            if (typeof LockHeader == 'function') {
+                window.setTimeout(function () { LockHeader(); }, 100);
+            }
+
+            $(document).on('keydown', '#popup_container button:last', function (e) {
+                if ($("this:focus") && (e.keyCode === TAB_KEY_CODE)) {
+                    e.preventDefault();
+                    $('#popup_container button:first').focus();
+                }
+            });
+
+            $(document).on('keydown', '#popup_container button:first', function (e) {
+                if ($("this:focus") && (e.keyCode === TAB_KEY_CODE)) {
+                    if (e.shiftKey) {
+                        e.preventDefault();
+                        $('#popup_container button:last').focus();
+                    }
+                }
+            });
+        });
+
+        $(window).on("resize", function () {
+            if (typeof AdjustLockedHeader == 'function') {
+                window.setTimeout(function () {
+                    AdjustLockedHeader();
+                }, 100);
+            }
+            SetFooterSize();
+        });
+
+
+        $(window).on("scroll", function () {
+            if (!docScrollHandeled) {
+                docScrollHandeled = true;
+                AdjustBodySectionHeight();
+            }
+        });
+
+
+        // Menu minification code
+        //$(document).ready(function () {
+        //    var menuWidth = $(".main-menu").width();
+        //    var firstNavElementWidth = $(".navigationElement ").find("table").first().find("td").first().outerWidth();
+
+        //    $(".main-menu").width(firstNavElementWidth).css("overflow", "hidden");
+
+        //    var imgRoot = $("body").attr("data-root");
+        //    $(".main-menu").append('<img src="' + imgRoot + 'Images/bakat_vit.png" id="imgHide" />');
+        //    $(".main-menu").append('<br /><img src="' + imgRoot + 'Images/framat_vit.png" id="imgShow" />');
+
+
+        //    $("#imgShow").on("click", function () {
+        //        $(".main-menu").animate({ width: menuWidth }, 1500, "easeOutQuart");
+        //    });
+
+        //    $("#imgHide").on("click", function () {
+        //        $(".main-menu").animate({ width: firstNavElementWidth }, 1500, "easeOutCirc");;
+        //    });
+        //});
+
+        function AdjustBodySectionHeight() {
+            setTimeout(function () {
+                $(".bodySection").css({ "max-height": "calc(100vh - 11.2rem)" });
+                $(".bodySection").css({ "max-height": $(".bodySection").height() + $(document).scrollTop() });
+                docScrollHandeled = false;
+            }, 100);
+        }
+
+        $("button").on("click", function () {
+            this.blur();
+        });
+
+        function SetMainContentSize(/*callback*/) {
+            setTimeout(function () {
+                $('.main-content').width($(window).width() - $('nav').width() - 10);
+            }, 100);
+        }
+
+        function SetFooterSize() {
+            $('.footer').width($('.main-content').width()).show("fade", 222);
+        }
+    </script>
+
+    
+    <script>
+        $(document).ready(function () {
+            $(document).ready(function () {
+                $("#content").show("fade", 444, function () { });
+            });
+
+            $(".weekWrapperDiv").on("mousedown", function () {
+                $(this).addClass("unfocus");
+            });
+
+        });
+
+        function LockHeader() {
+
+            $("#weekDays").css({ "visibility": "visible" });
+            $("#weekDays").detach().appendTo(".header");
+
+            AdjustLockedHeader();
+
+            $(".weekDay").first().css("width", $(".weekDay").first().css("max-width"));
+        }
+
+        function AdjustLockedHeader() {
+            var $width = $(".dayWrapperDiv").first().width();
+
+            $(".weekDay").each(function () {
+                $(this).detach().appendTo("#weekDays").css({ "width": $width });
+            });
+        }
+
+        function LoadLocationGroupDialog(categoryId) {
+            var url = '/AptusPortal/CustomerBooking/CustomerLocationGroups?categoryId=catId&amp;passDate=2024-07-15';
+            url = url.toString().replace("catId", categoryId).replace("&amp;", "&");
+            $("#dialog-locationsGroups").dialog({
+                autoOpen: true,
+                cache: false,
+                closeOnEscape: true,
+                close: function (event, ui) { $(this).dialog("destroy"); $(this).empty(); $(".weekWrapperButton").first().focus(); },
+                modal: true,
+                width: "auto",
+                height: "auto",
+                //position: [0,0],
+                position: { my: "center top", at: "top+10", of: ".header" },
+                resizable: false,
+                show: 333,
+                title: "Välj en plats där du vill boka",
+                open: function (event, ui) {
+                    $(this).load(url, function (data) {
+                        try {
+                            var obj = jQuery.parseJSON(data);
+                            if (obj.result === "Redirect")
+                                window.location.href = obj.url;
+                        }
+                        catch (e) { }//do nada
+                    });
+                    $(".ui-dialog").css({ "width": "25%" });
+                    $(".ui-dialog-content").css({ "max-height": "80vh", "overflow-x": "hidden", "overflow-y": "auto" });
+                    $('.ui-widget-overlay').bind('click', function () { $(this).siblings('.ui-dialog').find('.ui-dialog-content').dialog('close'); });
+
+                    setTimeout(function () {
+                        $("#dialog-locationsGroups").dialog("option", "position", { my: "center top", at: "top+10", of: ".header" });
+                        $(".ui-dialog").attr("aria-describedby", ".ui-dialog-title").focus();
+                    }, 100);
+                },
+            });
+        }
+
+        function LoadOffsetMonthDialog() {
+            var url = '/AptusPortal/CustomerBooking/OverviewOffsetMonth?bookingGroupId=1';
+            url = url.toString().replace("&amp;", "&");
+            $("#dialog-offsetMonth").dialog({
+                autoOpen: true,
+                cache: false,
+                closeOnEscape: true,
+                close: function (event, ui) { $(this).dialog("destroy"); $(this).empty(); $(".weekWrapperButton").first().focus(); },
+                modal: true,
+                width: "auto",
+                height: "auto",
+                //position: [0,0],
+                position: { my: "center top", at: "top+10", of: ".header" },
+                resizable: false,
+                show: 333,
+                title: "Månader",
+                open: function (event, ui) {
+                    $(this).load(url, function (data) {
+                        try {
+                            var obj = jQuery.parseJSON(data);
+                            if (obj.result === "Redirect")
+                                window.location.href = obj.url;
+                        }
+                        catch (e) { }//do nada
+                    });
+                    $(".ui-dialog").css({ "min-width": "20em" });
+                    $(".ui-dialog-content").css({ "max-height": "90vh", "overflow-y": "auto" });
+                    $('.ui-widget-overlay').bind('click', function () { $(this).siblings('.ui-dialog').find('.ui-dialog-content').dialog('close'); });
+
+                    setTimeout(function () {
+                        $("#dialog-offsetMonth").dialog("option", "position", { my: "center top", at: "top+10", of: ".header" });
+                    }, 100);
+                },
+            });
+        }
+
+        $(".weekWrapperDiv").keyup(function (event) {
+            if (event.which == 13 || event.which == 0 || event.which == 32) {
+                Redirect($(this).attr("data-new-location"))
+            }
+        }).click(function () {
+            Redirect($(this).attr("data-new-location"))
+        });
+
+        function Redirect(location) {
+            document.location.href = location;
+        }
+    </script>
+
+
+
+<protonpass-root-d11d data-protonpass-role="root"></protonpass-root-d11d></body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html style="background-color: #fff; height:100%; width:100%; margin:0; overflow:hidden"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="http://178.16.220.6/AptusPortal/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://178.16.220.6/AptusPortal/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link href="Login_files/css.css" rel="stylesheet">
+
+    <script src="Login_files/jquery"></script>
+
+    <script src="Login_files/jqueryval"></script>
+
+    <link href="Login_files/jQueryAlertCss.css" rel="stylesheet">
+
+    <script src="Login_files/jQueryAlertScripts"></script>
+
+
+    <link href="Login_files/ManageKeys.css" rel="stylesheet">
+
+    <script src="Login_files/pwEnc.js"></script>
+</head>
+<body style="height: 100%; width: 100%; margin: 0px; overflow-y: auto;">
+    
+    <div style="display:table; height:100%; width:100%;">
+        <div style="display:table-row">
+            <div style="display:table; text-align: center; margin-left:auto; margin-right:auto; min-height:130px">
+                <div style="display:table-row">
+                    <div style="display:table-cell; padding-top:25px">
+<table>
+    <tbody><tr>
+            <td>
+                <button tabindex="0" style="background-color:transparent" title="svenska" aria-label="svenska" type="button" onclick="document.location.href = '/AptusPortal/Account/SetCustomerLanguage?lang=sv-SE&amp;returnController=Account&amp;returnAction=Login';">
+                    <img src="Login_files/sv-SE.png" style="width:25px; height:25px;">
+                </button>
+            </td>
+            <td>
+                <button tabindex="0" style="background-color:transparent" title="English" aria-label="English" type="button" onclick="document.location.href = '/AptusPortal/Account/SetCustomerLanguage?lang=en-GB&amp;returnController=Account&amp;returnAction=Login';">
+                    <img src="Login_files/en-GB.png" style="width:25px; height:25px;">
+                </button>
+            </td>
+
+    </tr>
+</tbody></table>
+
+                    </div>
+                </div>
+                <div style="display:table-row;">
+                    <div style="display:table-cell; padding-top:25px;">
+                        <h1>APTUSPORTAL</h1>
+                    </div>
+                </div>
+            </div>
+            <div style="display:table; text-align: center; margin-left:auto; margin-right:auto;">
+<form action="/AptusPortal/Account/Login?ReturnUrl=%2fAptusPortal%2f" method="post" novalidate="novalidate"><input id="DeviceType" name="DeviceType" type="hidden" value="PC">                    <div style="display:table-row;">
+                        <div style="display:table-cell; padding-bottom:15px; text-align: center;">
+                            <label><input checked="checked" data-val="true" data-val-required="The DesktopSelected field is required." id="DesktopSelected" name="DesktopSelected" type="radio" value="true"> Dator</label>
+                            <label><input id="DesktopSelected" name="DesktopSelected" type="radio" value="false"> Mobil</label>
+                        </div>
+                    </div>
+                    <div style="display:table-row;">
+                        <div style="display:table-cell;">
+                            <div style="text-align:center; width:100%">
+                                <div style="margin-left:auto; margin-right:auto; text-align:center;">
+                                    <div style="display:table; width:100%">
+                                        <input name="__RequestVerificationToken" type="hidden" value="s-Vu6uf-_OIevcyUUXPw-JKpLM0IslcGHSrYebwYiQJyXJy7oRdLedhawrUJVLryNZatw3kGPUr-k4dKdhPgzqOGT0Der7vqN3Rxpnf_A1A1">
+                                        <div style="display:table-row">
+                                            <div style="display:table-cell">
+                                                <img src="Login_files/user_image.png" alt="" aria-hidden="true" style="height:184px; width:184px">
+                                            </div>
+                                        </div>
+                                        <div style="display:table-row">
+                                            <div style="display:table-cell; text-align:center">
+                                                <br>
+
+
+                                                <protonpass-control-1167 data-protonpass-role="icon"></protonpass-control-1167><input aria-label="Användarnamn/E-post" autofocus="autofocus" class="inputStyle" id="UserName" name="UserName" placeholder="Användarnamn/E-post" type="text" style="" data-protonpass-base-css="{&quot;padding-right&quot;:&quot;&quot;}">
+                                            </div>
+                                        </div>
+                                        <div style="display:table-row">
+                                            <div style="display:table-cell">
+                                                <input aria-label="Lösenord" class="inputStyle" id="Password" name="Password" placeholder="Lösenord" type="password">
+
+                                                <input id="PwEnc" name="PwEnc" type="hidden" value="">
+                                                <input id="PasswordSalt" name="PasswordSalt" type="hidden" value="595">
+                                            </div>
+                                        </div>
+                                        <div style="display:table-row">
+                                            <div style="display:table-cell">
+                                                <br>
+                                                <button style="width:100%; width:10rem; height:2.8rem; color:white" class="loginButton" id="btnLogin" type="submit">Logga in</button>
+                                            </div>
+                                        </div>
+                                        <div style="display:table-row">
+                                            <div style="display:table-cell">
+                                                <button type="button" style="padding:0; background-color:transparent; font-size:0.7rem;" aria-label="Jag har glömt mitt lösenord" onclick="location.href='/AptusPortal/Account/ResetPassword'">
+                                                    Jag har glömt mitt lösenord
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</form>            </div>
+        </div>
+        <div style="display:table-row; ">
+            <div style="display:table-cell; text-align:center; padding-top:20px">
+                <img src="Login_files/logo_black.png" style="width:100px;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#UserName").val("");
+            $(".okButton").on("click", function () {
+                $("#UserName").val("").focus();
+            })
+        });
+
+        $("#btnLogin").click(function () {
+            var encodedPW = '';
+
+            if (encodedPW.trim === "function") {
+                encodedPW = enc_str($("#Password").val().trim(), $("#PasswordSalt").val().trim());
+                $("#UserName").val($("#UserName").val().trim());
+            }
+            else // IE 8
+            {
+                encodedPW = enc_str($("#Password").val(), $("#PasswordSalt").val());
+            }
+
+            $("#PwEnc").val(encodedPW);
+            //$("#PasswordSalt").val("");
+        });
+
+    </script>
+
+
+<protonpass-root-1167 data-protonpass-role="root"></protonpass-root-1167></body></html>

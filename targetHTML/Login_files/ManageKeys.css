@@ -1,0 +1,106 @@
+﻿.inputStyle {
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    color: #363d43;
+}
+    
+.tableCell {
+    padding-bottom: .5em;
+    padding-top: .5em;
+}
+
+.messageError {
+    color: #ff2846;
+}
+
+.lockCard td:not(:last-child) {
+    line-height: 5em;
+}
+
+.lockCard td {
+    padding: 0;
+}
+
+.keysAndCodesButtonBase
+{
+    height: 2.8rem;
+    color: white;
+    background-color:#FF5252;
+    cursor: pointer;
+    vertical-align: bottom;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.manageKeyButton {
+    background-color:#555a60;
+}
+
+.manageKeyButton[disabled] {
+    background-color:#e3e3e3;
+    color: #707070;
+    cursor:not-allowed;
+}
+
+.manageKeyButtonAgeraBig {
+    background-color:#555a60;
+    left:auto;
+    width:100%;
+}
+
+.manageKeyButtonAgeraSmall {
+    background-color:#555a60;
+    left:auto;
+    width:50%;
+}
+
+.blockAndDeleteButton {
+    background-color:#363d43;
+}
+
+.inputStyle {
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+}
+
+.messageError {
+    color: #ff2846;
+}
+
+.lockCard td:not(:last-child) {
+    line-height: 5em;
+}
+
+.lockCard td {
+    padding: 0;
+}
+
+.keyCodeButtonBase {
+    line-height: 2.8em;
+    height: 2.8em;
+    color: white;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+
+.keyCodeButton {
+    background-color: #66b266;
+}
+
+.cancelButton {
+    background-color: black;
+}
+
+.deleteButton {
+    background-color: #ff2846;
+    width:33%;
+}

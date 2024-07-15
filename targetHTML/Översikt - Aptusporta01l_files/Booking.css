@@ -1,0 +1,194 @@
+﻿/*-------------------------------------------- BUTTON -----------------------------------------------------*/
+.bookingNavigation {
+    background-color: #fff;
+    width: 100%;
+    text-align: left;
+    line-height: 1.5rem;
+    height: 4rem;
+}
+
+    .bookingNavigation td {
+        padding: 0;
+        vertical-align: middle;
+    }
+
+        .bookingNavigation td:first-child img {
+            padding: 0 1rem .2rem .5rem;
+        }
+
+#changeGroup {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid gray;
+}
+
+    #changeGroup:hover {
+        border-bottom: 1px solid #ff2846;
+    }
+
+/******************* BOOKING CALENDAR *************************/
+.interval {
+    position: relative;
+    height: 6rem;
+    font-size: 1rem;
+    border: thin solid white;
+    min-width: 5.5em;
+    text-align: center;
+}
+
+.otherCustomer {
+    background-color: darkblue;
+    color: white;
+}
+
+#weekDays {
+    display: table;
+    _width: 100%;
+    font-family: Antonio, Arial;
+    font-size: 1rem;
+    _margin-left: 4.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: 10;
+    height: 2.4rem;
+}
+
+.weekDay {
+    display: table-cell;
+    text-align: center;
+    min-width: 6em;
+    color: white;
+    height: 2.4rem;
+    vertical-align: text-top;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.dayOfMonth {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.bookButton, .unbookButton, .bookButtonDisabled {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 2.8rem;
+    height: 2.8rem;
+    color: white;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 100%;
+    _vertical-align: bottom;
+    padding: 0;
+    margin: 0;
+}
+
+.bookButtonFirstAvailable {
+    color: #154906;
+}
+
+.dayColumn {
+    width: 12.5%;
+    min-width: 6em;
+    display: table-cell;
+    vertical-align: top;
+}
+
+/*----------------------- CALENDAR OVERVIEW ------------------------------*/
+.sectionsWrapper {
+    display: inline-block;
+    position: relative;
+    margin-top: 1rem;
+    z-index: 0;
+}
+
+.dayBlock {
+    width: .7rem;
+    height: .7rem;
+}
+
+/*.bcHeader {
+    font-family: Antonio, Arial;
+    font-size: 1rem;
+    background-color: transparent;
+    color: white;
+    height: 2.4rem;
+    text-transform: uppercase;
+}
+
+    .bcHeader > div {
+        min-width: 4rem;
+        text-align: center;
+    }
+
+        .bcHeader > div:first-child {
+            min-width: 5rem !important;
+        }*/
+
+.weekWrapperDiv {
+    display: table;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    background-color: white;
+    border: 1px solid white;
+    outline: 0 !important;
+    cursor: pointer;
+}
+
+    .weekWrapperDiv:hover {
+        background-color: #efefef;
+    }
+
+.dayWrapperDiv {
+    display: table-cell;
+    text-align: center;
+    min-width: 6rem;
+}
+
+.weekNumber {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    width: 5rem;
+    min-width: 5rem;
+    font-weight: bold;
+}
+
+    .weekNumber > div {
+        position: absolute;
+        top: 40%;
+        text-align: center;
+        width: 100%;
+    }
+/*.header select {
+    font-size: 1rem;
+    font-family: Antonio;
+    background-color: #444;
+    color: #FFF;
+    border: 0;
+    margin-top: 1rem;
+    padding-left: .5rem;
+}*/
+/*----------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* DIALOG */
+.hrDevider {
+    margin: 0 0 .2rem 0;
+}
+
+    .hrDevider:last-child {
+        display: none;
+    }
