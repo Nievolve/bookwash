@@ -1,0 +1,10 @@
+from selenium import webdriver
+
+# Skapa en ny instans av Firefox-webbläsaren
+driver = webdriver.Firefox()
+
+# Öppna en webbsida
+driver.get("http://www.example.com")
+
+# Stäng webbläsaren
+driver.quit()
